@@ -19,7 +19,7 @@ export async function getStaticProps() {
 
 export default function Home({ homepage, settings }) {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8 md:p-16 bg-white text-black">
+    <div className="px-4 py-8 md:p-16 bg-white text-black">
       <Head>
         <title>{settings.title}</title>
         <meta name="title" content={settings.title} />
@@ -32,24 +32,16 @@ export default function Home({ homepage, settings }) {
         <link rel="icon" type="image/png" href={settings.favicon} />
       </Head>
 
-      <main className="max-w-full prose prose-h1:text-lg prose-a:text-blue-600">
-        <h1 className="font-bold">{homepage.heading}</h1>
+      <main className="-translate-y-5 relative max-w-full prose prose-h1:text-lg prose-a:no-underline prose-a:text-blue-600 hover:prose-a:bg-blue-600 hover:prose-a:text-white hover:prose-a:no-underline">
+        <h1 className="absolute font-bold invisible">{homepage.heading}</h1>
         <PortableText content={homepage.body} serializers={{}} />
       </main>
 
-      <footer className="mt-16 md:mt-24 flex justify-between items-center">
-        <a
-          href="mailto:hello@evieedwards.org"
-          className="px-2 py-1 border border-gray-300 text-gray-600 rounded-md transition-all ease-in-out duration-150 hover:scale-105 hover:border-gray-900 hover:text-gray-900"
-        >
-          Contact
-        </a>
-        <div className="flex text-sm text-gray-500">
-          <span>Last updated on</span>
-          <span className="ml-1 font-medium text-black">
-            {new Date(homepage._updatedAt).toLocaleDateString()}
-          </span>
-        </div>
+      <footer className="mt-16 md:mt-24 flex text-sm text-gray-500">
+        <span>Last updated on</span>
+        <span className="ml-1 font-medium text-black">
+          {new Date(homepage._updatedAt).toLocaleDateString()}
+        </span>
       </footer>
     </div>
   );
