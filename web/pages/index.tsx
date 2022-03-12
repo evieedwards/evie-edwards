@@ -19,7 +19,7 @@ export async function getStaticProps() {
 
 export default function Home({ homepage, settings }) {
   return (
-    <div className="px-4 py-8 md:p-16 bg-white text-black">
+    <div className="-translate-y-5 px-4 py-8 md:p-16 bg-white text-black">
       <Head>
         <title>{settings.title}</title>
         <meta name="title" content={settings.title} />
@@ -32,7 +32,7 @@ export default function Home({ homepage, settings }) {
         <link rel="icon" type="image/png" href={settings.favicon} />
       </Head>
 
-      <main className="-translate-y-5 relative max-w-full prose prose-h1:text-lg prose-a:no-underline prose-a:text-blue-600 hover:prose-a:bg-blue-600 hover:prose-a:text-white hover:prose-a:no-underline">
+      <main className="relative max-w-full prose prose-h1:text-lg prose-a:no-underline prose-a:text-blue-600 hover:prose-a:bg-blue-600 hover:prose-a:text-white hover:prose-a:no-underline">
         <h1 className="absolute font-bold invisible">{homepage.heading}</h1>
         <PortableText content={homepage.body} serializers={{}} />
       </main>
