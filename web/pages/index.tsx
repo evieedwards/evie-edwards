@@ -1,7 +1,8 @@
-import PortableText from "react-portable-text";
+import { PortableText } from "@portabletext/react";
 import Head from "next/head";
 import { client } from "../lib/sanity";
 import groq from "groq";
+import { useEffect } from "react";
 
 export async function getStaticProps() {
   return {
@@ -16,6 +17,18 @@ export async function getStaticProps() {
     revalidate: 60,
   };
 }
+
+const components = {
+  marks: {
+    link: ({ children, value }) => {
+      return (
+        <a href={value.href} target="_blank" rel="noreferrer">
+          {children}
+        </a>
+      );
+    },
+  },
+};
 
 export default function Home({ homepage, settings }) {
   return (
@@ -34,10 +47,11 @@ export default function Home({ homepage, settings }) {
 
       <main className="relative max-w-full prose prose-h1:text-lg prose-a:no-underline prose-a:text-blue-600 hover:prose-a:bg-blue-600 hover:prose-a:text-white hover:prose-a:no-underline">
         <h1 className="absolute font-bold invisible">{homepage.heading}</h1>
-        <PortableText content={homepage.body} serializers={{}} />
+        {/* @ts-ignore */}
+        <PortableText value={homepage.body} components={components} />
       </main>
 
-      <footer className="mt-16 md:mt-24 flex text-sm text-gray-500">
+      <footer className="mt-8 flex text-xs text-gray-500">
         <span>Last updated on</span>
         <span className="ml-1 font-medium text-black">
           {new Date(homepage._updatedAt).toLocaleDateString()}

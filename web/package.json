@@ -9,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^1.0.4",
     "@sanity/webhook": "^1.0.2",
     "groq": "^2.15.0",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-portable-text": "^0.4.3"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@sanity/client": "^3.2.0",
