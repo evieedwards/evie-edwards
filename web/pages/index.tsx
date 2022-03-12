@@ -13,6 +13,7 @@ export async function getStaticProps() {
         title, description, "og_image": og_image.asset->url, "favicon": favicon.asset->url
       }`),
     },
+    revalidate: 60,
   };
 }
 
