@@ -5,9 +5,10 @@ interface Props {
 const { path } = Astro.props;
 const options = [
   { value: "/", label: "images" },
-  { value: "/text", label: "text" },
-  { value: "/contact", label: "contact" },
+  { value: "/titles", label: "titles" },
+  { value: "/about", label: "about" },
 ];
+console.log("path", path);
 const selectedOption = options.find((option) => option.value === path);
 ---
 
