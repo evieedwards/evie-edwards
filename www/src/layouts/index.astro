@@ -1,0 +1,41 @@
+---
+const currentPath = Astro.url.pathname;
+const options = [
+  { value: "/", label: "images" },
+  { value: "/text", label: "text" },
+  { value: "/contact", label: "contact" },
+];
+const selectedOption = options.find((option) => option.value === currentPath);
+---
+
+<script>
+  const navigation = document.getElementById("navigation");
+  navigation?.addEventListener("change", (event) => {
+    if (!event.target) return;
+    window.location.href = (event.target as HTMLSelectElement).value;
+  });
+</script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <select name="navigation" id="navigation">
+      {
+        options.map((option) => (
+          <option value={option.value} selected={option === selectedOption}>
+            {option.label}
+          </option>
+        ))
+      }
+    </select>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
