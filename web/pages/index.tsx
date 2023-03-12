@@ -2,7 +2,6 @@ import { PortableText } from "@portabletext/react";
 import Head from "next/head";
 import { client } from "../lib/sanity";
 import groq from "groq";
-import { useEffect } from "react";
 
 export async function getStaticProps() {
   return {
