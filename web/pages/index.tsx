@@ -21,10 +21,11 @@ export default function Images({ projects }) {
           {projects
             .filter((project) => project.image !== null)
             .map((project) => (
-              <div key={project.id} className="relative h-64 w-64">
+              <div key={project.id}>
                 <Image
                   src={project.image.secure_url}
-                  fill
+                  width={300}
+                  height={300}
                   sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
