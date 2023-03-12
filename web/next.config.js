@@ -3,7 +3,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["cdn.sanity.io"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
     loader: "custom",
     loaderFile: "./lib/cloudinary.ts",
   },

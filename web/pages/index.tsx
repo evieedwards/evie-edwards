@@ -21,13 +21,14 @@ export default function Images({ projects }) {
           {projects
             .filter((project) => project.image !== null)
             .map((project) => (
-              <div key={project.id}>
+              <div key={project.id} className="relative h-64 w-64">
                 <Image
                   src={project.image.secure_url}
-                  width={300}
-                  height={300}
-                  alt="hello"
-                  style={{ width: "auto", height: "auto" }}
+                  fill
+                  sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+                  alt={project.title}
                 />
               </div>
             ))}

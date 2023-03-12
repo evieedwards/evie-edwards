@@ -21,7 +21,9 @@ export const getProjects = () => {
     description,
     date,
     medium,
-    image
+    image {
+      secure_url,
+    }
   }`;
   return client.fetch(query);
 };
