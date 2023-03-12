@@ -23,10 +23,11 @@ export default function Images({ projects }) {
             .map((project) => (
               <div key={project.id}>
                 <Image
-                  src={urlFor(project.image).width(300).height(300).url()}
+                  src={project.image.secure_url}
                   width={300}
                   height={300}
-                  alt={project.alt}
+                  alt="hello"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
             ))}

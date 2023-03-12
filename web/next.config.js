@@ -4,6 +4,8 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ["cdn.sanity.io"],
+    loader: "custom",
+    loaderFile: "./lib/cloudinary.ts",
   },
 };
 

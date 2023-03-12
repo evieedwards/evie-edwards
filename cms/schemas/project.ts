@@ -33,15 +33,8 @@ export const project = defineType({
     }),
     defineField({
       name: 'image',
-      type: 'image',
+      type: 'cloudinary.asset',
       title: 'Image',
-      fields: [
-        defineField({
-          name: 'alt',
-          type: 'string',
-          title: 'Alt text',
-        }),
-      ],
     }),
     defineField({
       name: 'description',

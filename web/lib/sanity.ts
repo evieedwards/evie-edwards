@@ -21,7 +21,7 @@ export const getProjects = () => {
     description,
     date,
     medium,
-    image,
+    image
   }`;
   return client.fetch(query);
 };
