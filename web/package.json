@@ -3,21 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "preexport": "yarn build",
+    "export": "next export",
+    "prestart": "yarn export",
+    "start": "serve out",
     "lint": "next lint"
   },
   "dependencies": {
     "@portabletext/react": "^2.0.2",
+    "@sanity/image-url": "^1.0.2",
     "@sanity/webhook": "^2.0.0",
-    "groq": "^3.6.0",
     "next": "13.2.4",
+    "next-sanity": "^4.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@sanity/client": "^5.2.2",
     "@tailwindcss/typography": "^0.5.2",
     "@types/node": "18.15.0",
     "@types/react": "18.0.28",
